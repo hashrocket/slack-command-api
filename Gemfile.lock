@@ -6,7 +6,6 @@ GEM
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
     diff-lcs (1.2.5)
-    dotenv (2.0.1)
     json (1.8.2)
     method_source (0.8.2)
     pry (0.10.1)
@@ -46,7 +45,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  dotenv
   json
   pry
   rack-test
