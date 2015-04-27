@@ -26,8 +26,8 @@ include Rack::Test::Methods
 
   it 'accepts data and posts it back to Slack' do
     stub_request(:post, 'http://www.example.com').to_return(body: 'foobar')
+    expect(RestClient).to receive(:post)
     post '/late', data
-    expect(last_response).to be_ok
   end
 
 end
