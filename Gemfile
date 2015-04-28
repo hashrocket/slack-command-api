@@ -5,6 +5,7 @@ gem 'json'
 gem 'pry'
 gem 'rest-client'
 gem 'sinatra'
+gem 'dotenv'
 
 group :test do
   gem 'rspec'
