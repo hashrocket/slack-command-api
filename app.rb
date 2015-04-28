@@ -7,3 +7,7 @@ post '/late' do
    Slack.post_late_response(params)
 end
 
+get '/' do
+   markdown :index
+end
+
