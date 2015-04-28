@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
 ruby '2.2.2'
 
-gem 'json'
-gem 'pry'
-gem 'rest-client'
-gem 'sinatra'
-gem 'dotenv'
+gem 'json'         # JSON
+gem 'pry'          # Debugger
+gem 'rest-client'  # Make external HTTP requests
+gem 'sinatra'      # Ruby web framework
+gem 'dotenv'       # Environment Variables
 
 group :test do
-  gem 'rspec'
-  gem 'rack-test'
-  gem 'webmock'
+  gem 'rspec'      # Testing Framework
+  gem 'rack-test'  # Testing library for Rack
+  gem 'webmock'    # Fake HTTP requests
 end
