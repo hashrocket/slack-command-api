@@ -1,6 +1,6 @@
 require_relative 'spec_helper'
 
-describe 'Slack Late API' do
+describe 'Slack' do
 
   def app
     Sinatra::Application
@@ -23,7 +23,7 @@ describe 'Slack Late API' do
   it 'accepts data and posts it back to Slack' do
     stub_request(:post, 'http://www.example.com').to_return(body: 'foobar')
     expect(RestClient).to receive(:post)
-    post '/late', data
+    Slack.post_late_response(data)
   end
 
 end
