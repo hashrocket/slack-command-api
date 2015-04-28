@@ -1,8 +1,10 @@
 require 'bundler'
 Bundler.require
 Dotenv.load
+require_relative 'command_processor'
+
 post '/late' do
-   params['text'] = "Hey team, #{params[:user_name]} is gonna be late. He/She will be in around #{params[:text].strip}."
-   RestClient.post(ENV['SLACK_URL'], params.to_json)
+   response = CommandProcessor.new(params).process_late_command.to_json
+   RestClient.post(ENV['SLACK_URL'], response)
 end
 

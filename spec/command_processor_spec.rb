@@ -1,6 +1,6 @@
 require_relative 'spec_helper'
 
-describe 'Slack Late API' do
+describe 'Command Processor' do
 
   def app
     Sinatra::Application
@@ -20,10 +20,8 @@ describe 'Slack Late API' do
     }
   end
 
-  it 'accepts data and posts it back to Slack' do
-    stub_request(:post, 'http://www.example.com').to_return(body: 'foobar')
-    expect(RestClient).to receive(:post)
-    post '/late', data
+  it 'processes a late command' do
+    output = CommandProcessor.new(data).process_late_command
+    expect(output).to eq({'text' => 'Hey team, Steve is gonna be late. He/She will be in around 10AM.'})
   end
-
 end
