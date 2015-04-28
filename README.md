@@ -24,5 +24,5 @@ A `/late 10AM` command converts to a text response **Hey team, I'm gonna be in a
 2. Run the tests with `rspec`
 
 ## Credits
-Author: [Joshua Plicque](https://twitter.com/GoHard_EveryDay)
+Maintainer: [Joshua Plicque](https://twitter.com/GoHard_EveryDay)
 If you have any questions, send me a tweet.
