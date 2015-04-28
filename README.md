@@ -17,7 +17,7 @@ A `/late 10AM` command converts to a text response **Hey team, I'm gonna be in a
 2. `cd` into the folder.
 3. Bundle the gems. `bundle install`
 4. Set your Slack webhook environment variable. Create a `.env` file. Populate it with a `SLACK_URL` variable for your app's incoming webhook. 
-4. Run the app with `bundle exec rackup`
+4. Run the app with `bundle exec passenger start`
 
 ## Testing
 1. Head to the spec folder. `cd spec`
