@@ -1,2 +1,5 @@
 # Ignore environment variables
 .env
+
+# Ignore logs
+passenger.3000*
