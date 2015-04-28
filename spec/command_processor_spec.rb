@@ -6,7 +6,7 @@ describe 'Command Processor' do
     Sinatra::Application
   end
 
-  def data
+  let(:data) do
     {
         token:        'KjRUKVRBoQVerm6bJTymvOe0',
         team_id:      'T0001',
@@ -20,16 +20,36 @@ describe 'Command Processor' do
     }
   end
 
-  it 'processes a late command' do
-    output = CommandProcessor.new(data).process_late_command
-    expect(output).to eq({'text' => 'Hey team, Steve is gonna be late. He/She will be in around 10AM.'})
-  end
-
-  it 'optionally posts to a custom channel' do
+  let(:default_channel_processor) { CommandProcessor.new(data) }
+  let(:custom_channel_processor) { CommandProcessor.new(custom_channel_data) }
+  let(:custom_channel_data) do
     channel_data = data
     channel_data[:text] = '10AM #other_channel'
-    output = CommandProcessor.new(channel_data).process_late_command
-    expect(output).to eq({'text' => 'Hey team, Steve is gonna be late. He/She will be in around 10AM.', 'channel' => '#other_channel'})
+    channel_data
+  end
+
+  describe '#initialize' do
+    it 'assigns @text on initialization' do
+      expect(default_channel_processor.text).to eq('10AM')
+      expect(default_channel_processor.channel).to eq('#announcements')
+    end
+
+    it 'assigns @channel on initialization' do
+      expect(custom_channel_processor.text).to eq('10AM')
+      expect(custom_channel_processor.channel).to eq('#other_channel')
+    end
+  end
+
+  describe '#process_late_command' do
+    it 'processes late command with default channel' do
+      output = default_channel_processor.process_late_command
+      expect(output).to eq({'text' => 'Hey team, Steve is gonna be late. He/She will be in around 10AM.', 'channel' => '#announcements'})
+    end
+
+    it 'proceesses late command with custom channel' do
+      output = custom_channel_processor.process_late_command
+      expect(output).to eq({'text' => 'Hey team, Steve is gonna be late. He/She will be in around 10AM.', 'channel' => '#other_channel'})
+    end
   end
 
 end
