@@ -8,7 +8,7 @@ class CommandProcessor
 
    def process_late_command
       {
-         'text'    => "Hey team, #{user_name} is gonna be late. He/She will be in around #{text}.",
+         'text'    => "Hey team, #{user_name} is gonna be late and will be in around #{text}.",
          'channel' => channel
       }
    end
