@@ -43,12 +43,12 @@ describe 'Command Processor' do
   describe '#process_late_command' do
     it 'processes late command with default channel' do
       output = default_channel_processor.process_late_command
-      expect(output).to eq({'text' => 'Hey team, Steve is gonna be late. He/She will be in around 10AM.', 'channel' => '#announcements'})
+     expect(output).to eq({'text' => 'Hey team, Steve is gonna be late and will be in around 10AM.', 'channel' => '#announcements'})
     end
 
     it 'proceesses late command with custom channel' do
       output = custom_channel_processor.process_late_command
-      expect(output).to eq({'text' => 'Hey team, Steve is gonna be late. He/She will be in around 10AM.', 'channel' => '#other_channel'})
+     expect(output).to eq({'text' => 'Hey team, Steve is gonna be late and will be in around 10AM.', 'channel' => '#other_channel'})
     end
   end
 
