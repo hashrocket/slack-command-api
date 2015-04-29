@@ -43,4 +43,26 @@ describe ParamsProcessor do
     expect(parser.channel).to eq('#announcements')
     expect(parser.text).to eq('')
   end
+
+  it 'parses timeoff text for one day' do
+    timeoff_data = data
+    timeoff_data[:text] = "Monday"
+    parser = described_class.new(timeoff_data)
+    expect(parser.timeoff_text).to eq('Monday')
+  end
+
+  it 'parses timeoff text for two days with a space' do
+    timeoff_data = data
+    timeoff_data[:text] = "Monday, Tuesday"
+    parser = described_class.new(timeoff_data)
+    expect(parser.timeoff_text).to eq('Monday through Tuesday')
+  end
+
+  it 'parses timeoff text for two days without a space' do
+    timeoff_data = data
+    timeoff_data[:text] = 'Monday,Wednesday'
+    parser = described_class.new(timeoff_data)
+    expect(parser.timeoff_text).to eq 'Monday through Wednesday'
+  end
+
 end

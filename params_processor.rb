@@ -9,6 +9,10 @@ class ParamsProcessor
       text_values.first
    end
 
+   def timeoff_text
+      text.gsub(' ', '').gsub(',', ' through ')
+   end
+
    def channel
       text_values[1] || "#announcements"
    end
@@ -22,5 +26,6 @@ class ParamsProcessor
    def text_values
       params[:text] ? params[:text].split(/(?=#)/).map(&:strip) : [""]
    end
+
 end
 
