@@ -14,7 +14,7 @@ class ParamsProcessor
    end
 
    def channel
-      text_values[1] || "#announcements"
+      text_values[1] || ENV['DEFAULT_SLACK_CHANNEL']
    end
 
    def user_name
