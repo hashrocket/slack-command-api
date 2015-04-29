@@ -28,4 +28,8 @@ describe Slack do
     described_class.new(late_message, 'www.example.com').post
   end
 
+  it 'returns a json response' do
+    response = described_class.new(late_message, 'www.example.com').response
+    expect(response).to include "{\"text\""
+  end
 end

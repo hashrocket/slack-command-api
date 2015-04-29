@@ -14,6 +14,6 @@ class Slack
       {
          'text'    => message.call,
          'channel' => message.channel
-      }
+      }.to_json
    end
 end
