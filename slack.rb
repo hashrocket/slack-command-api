@@ -7,7 +7,7 @@ class Slack
    end
 
    def post
-      RestClient.post(response, url)
+      RestClient.post(url, response)
    end
 
    def response
