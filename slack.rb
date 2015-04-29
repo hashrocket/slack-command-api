@@ -1,8 +1,19 @@
-require_relative 'command_processor'
-
 class Slack
-   def self.post_late_response(params)
-      response = CommandProcessor.new(params).process_late_command.to_json
-      RestClient.post(ENV['SLACK_LATE_URL'], response)
+   attr_reader :message, :url
+
+   def initialize(message, url)
+      @message = message
+      @url     = url
+   end
+
+   def post
+      RestClient.post(response, url)
+   end
+
+   def response
+      {
+         'text'    => message.call,
+         'channel' => message.channel
+      }
    end
 end

@@ -1,12 +1,12 @@
 require_relative 'spec_helper'
 
-describe 'Slack' do
+describe Slack do
 
   def app
     Sinatra::Application
   end
 
-  def data
+  let(:data) do
     {
         token:        'KjRUKVRBoQVerm6bJTymvOe0',
         team_id:      'T0001',
@@ -20,10 +20,12 @@ describe 'Slack' do
     }
   end
 
+  let(:late_message) { LateMessage.new(data) }
+
   it 'accepts data and posts it back to Slack' do
     stub_request(:post, 'http://www.example.com').to_return(body: 'foobar')
     expect(RestClient).to receive(:post)
-    Slack.post_late_response(data)
+    described_class.new(late_message, 'www.example.com').post
   end
 
 end
