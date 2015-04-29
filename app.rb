@@ -13,7 +13,7 @@ end
 
 post '/timeoff' do
    message = TimeOffMessage.new(params)
-   Slack.new(message, ENV['SLACK_TIMEOFF_URL'].post
+   Slack.new(message, ENV['SLACK_TIMEOFF_URL']).post
 end
 
 get '/' do
