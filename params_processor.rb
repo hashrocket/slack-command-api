@@ -1,4 +1,5 @@
 class ParamsProcessor
+
    attr_reader :params
 
    def initialize(params)
@@ -28,4 +29,3 @@ class ParamsProcessor
    end
 
 end
-

@@ -1,4 +1,5 @@
 class Slack
+
    attr_reader :response
 
    def initialize(response)
@@ -17,4 +18,5 @@ class Slack
          'username'   => response.bot_name
       }.to_json
    end
+
 end

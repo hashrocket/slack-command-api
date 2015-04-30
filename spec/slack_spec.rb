@@ -31,4 +31,5 @@ describe Slack do
     expect(response).to include "\"icon_emoji\""
     expect(response).to include "\"username\""
   end
+
 end

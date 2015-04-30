@@ -32,4 +32,5 @@ describe 'API' do
     post '/timeoff', data
     expect(last_response).to be_ok
   end
+
 end

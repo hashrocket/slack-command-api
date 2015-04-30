@@ -1,6 +1,7 @@
 require_relative 'spec_helper'
 
 describe ParamsProcessor do
+
   let(:data) do
     {
       token:        'KjRUKVRBoQVerm6bJTymvOe0',

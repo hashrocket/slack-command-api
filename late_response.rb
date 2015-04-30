@@ -1,6 +1,7 @@
 require_relative 'generic_response'
 
 class LateResponse < GenericResponse
+
    def construct_message
       "Hey team, #{user_name} is gonna be late and will be in around #{text}."
    end
@@ -12,4 +13,5 @@ class LateResponse < GenericResponse
    def bot_name
       'Late-Bot'
    end
+
 end

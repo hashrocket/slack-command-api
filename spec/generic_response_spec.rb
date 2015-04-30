@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe GenericResponse do
+
   class Child < GenericResponse; end
 
   let(:child_class) do
