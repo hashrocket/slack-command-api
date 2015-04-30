@@ -44,6 +44,7 @@ class YourCommandResponse < GenericResponse
    ':whale:'
   end
 end
+```
 
 2. Add a post url to `app.rb`
 
@@ -56,7 +57,6 @@ end
 # ...
 ```
 
-```
 ## Testing
 1. Head to the spec folder. `cd spec`
 2. Run the tests with `rspec`
