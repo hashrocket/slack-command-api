@@ -18,16 +18,16 @@ describe Slack do
     }
   end
 
-  let(:late_message) { LateMessage.new(data) }
+  let(:late_message) { LateResponse.new(data) }
 
   it 'accepts data and posts it back to Slack' do
     stub_request(:post, 'http://www.example.com').to_return(body: 'foobar')
     expect(RestClient).to receive(:post)
-    described_class.new(late_message, 'www.example.com').post
+    described_class.new(late_message).post
   end
 
   it 'returns a json response' do
-    response = described_class.new(late_message, 'www.example.com').response
+    response = described_class.new(late_message).response
     expect(response).to include "{\"text\""
   end
 end

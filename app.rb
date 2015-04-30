@@ -1,19 +1,19 @@
 require 'bundler'
 require_relative 'slack'
-require_relative 'late_message'
-require_relative 'time_off_message'
+require_relative 'late_response'
+require_relative 'time_off_response'
 Bundler.require
 Dotenv.load
 
 
 post '/late' do
-   message = LateMessage.new(params)
-   Slack.new(message, ENV['SLACK_LATE_URL']).post
+   message = LateResponse.new(params)
+   Slack.new(message).post
 end
 
 post '/timeoff' do
-   message = TimeOffMessage.new(params)
-   Slack.new(message, ENV['SLACK_TIMEOFF_URL']).post
+   message = TimeOffResponse.new(params)
+   Slack.new(message).post
 end
 
 get '/' do

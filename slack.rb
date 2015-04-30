@@ -1,13 +1,12 @@
 class Slack
-   attr_reader :message, :url
+   attr_reader :message
 
-   def initialize(message, url)
+   def initialize(message)
       @message = message
-      @url     = url
    end
 
    def post
-      RestClient.post(url, response)
+      RestClient.post(ENV['SLACK_URL'], response)
    end
 
    def response
