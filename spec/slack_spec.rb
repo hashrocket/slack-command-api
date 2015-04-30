@@ -2,9 +2,7 @@ require_relative 'spec_helper'
 
 describe Slack do
 
-  def app
-    Sinatra::Application
-  end
+  let(:app) { Sinatra::Application }
 
   let(:data) do
     {

@@ -2,9 +2,7 @@ require_relative 'spec_helper'
 
 describe 'Views' do
 
-  def app
-    Sinatra::Application
-  end
+  let(:app) { Sinatra::Application }
 
   it 'renders the home page' do
     get '/'
