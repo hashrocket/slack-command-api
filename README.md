@@ -49,6 +49,8 @@ Add a post url to `app.rb`
 
 ```
 # ...
+require_relative 'your_command_response'
+# ...
 post '/your_command_url' do
   message = YourCommandResponse.new(params)
   Slack.new(message).post
