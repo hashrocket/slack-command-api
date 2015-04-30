@@ -6,7 +6,7 @@ class ParamsProcessor
    end
 
    def text
-      text_values.first
+      text_values[0]
    end
 
    def timeoff_text
