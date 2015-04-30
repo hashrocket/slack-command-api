@@ -22,16 +22,8 @@ A `/late 10AM` command converts to a text response **Hey team, I'm gonna be in a
 4. Run the app with `bundle exec passenger start`
 
 ## Adding a New Command in 2 steps
-1. Add a post url to `app.rb`
-```
-...
-post '/your_command_url' do
-  message = YourCommandResponse.new(params)
-  Slack.new(message).post
-end
-...
-```
-2. Create an response object that constructs a message, gives the bot a name, and gives it an emojo.
+
+1. Create a response object that constructs a message, gives the bot a name, and gives it an emojo.
 ```
 require_relative 'generic_response'
 
@@ -41,17 +33,27 @@ class YourCommandResponse < GenericResponse
     "This will show up in slack and can show the #{user_name} of who issued the command, the #{text} of the command, and the desired #{channel} for where the response is going to go."
   end
 
-  # This will show a whale icon for the slack bot
-  def icon_emoji
-   ':whale:'
-  end
-
   # Your bot will be named 'Your-Command-Bot'
   def bot_name
     'Your-Command-Bot'
   end
 
+  # This will show a whale icon for your chat bot
+  def icon_emoji
+   ':whale:'
+  end
 end
+
+2. Add a post url to `app.rb`
+```
+# ...
+post '/your_command_url' do
+  message = YourCommandResponse.new(params)
+  Slack.new(message).post
+end
+# ...
+```
+
 ```
 ## Testing
 1. Head to the spec folder. `cd spec`
