@@ -1,6 +1,17 @@
 require_relative 'params_processor'
 
-class LateMessage
+class GenericMessage
+   def call
+      raise MethodNotImplemented
+   end
+
+   def channel
+      raise MethodNotImplemented
+   end
+end
+
+
+class LateResponse < GenericMessage
    extend Forwardable
 
    delegate [:text, :user_name, :channel] => :processor

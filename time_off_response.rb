@@ -1,6 +1,6 @@
 require_relative 'params_processor'
 
-class TimeOffMessage
+class TimeOffResponse
    extend Forwardable
 
    delegate [:timeoff_text, :user_name, :channel] => :processor

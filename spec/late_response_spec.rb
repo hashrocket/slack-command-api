@@ -1,6 +1,7 @@
 require_relative 'spec_helper'
 
-describe TimeOffMessage do
+describe LateResponse do
+
   let(:data) do
     {
       token:        'KjRUKVRBoQVerm6bJTymvOe0',
@@ -10,13 +11,13 @@ describe TimeOffMessage do
       channel_name: 'other_channel',
       user_id:      'U2147483697',
       user_name:    'Steve',
-      command:      '/timeoff',
-      text:         'Monday'
+      command:      '/late',
+      text:         '10AM'
     }
   end
 
-  it '#call constructs a timeoff sentence for one day' do
-    expect(described_class.new(data).call).to eq 'Hey guys, Steve is gonna be out Monday.'
+  it '#call constructs a late sentence' do
+    expect(described_class.new(data).call).to eq 'Hey team, Steve is gonna be late and will be in around 10AM.'
   end
 
 end
