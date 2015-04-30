@@ -6,7 +6,6 @@ The API will post to your current channel by default, but you can specify a chan
 Example:
 A `/late 10AM` command converts to a text response **Hey team, I'm gonna be in around 10AM.**
 
-
 ## Dependencies
 
 * RVM
@@ -23,7 +22,8 @@ A `/late 10AM` command converts to a text response **Hey team, I'm gonna be in a
 
 ## Adding a New Command in 2 steps
 
-1. Create a response object that constructs a message, gives the bot a name, and gives it an emojo.
+Create a response object that constructs a message, gives the bot a name, and gives it an emojo.
+
 ```
 require_relative 'generic_response'
 
@@ -43,8 +43,10 @@ class YourCommandResponse < GenericResponse
    ':whale:'
   end
 end
+```
 
-2. Add a post url to `app.rb`
+Add a post url to `app.rb`
+
 ```
 # ...
 post '/your_command_url' do
@@ -54,7 +56,8 @@ end
 # ...
 ```
 
-```
+Done.
+
 ## Testing
 1. Head to the spec folder. `cd spec`
 2. Run the tests with `rspec`
