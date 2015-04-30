@@ -7,7 +7,7 @@ describe ParamsProcessor do
       team_id:      'T0001',
       team_domain:  'example',
       channel_id:   'C2147483705',
-      channel_name: 'other_channel',
+      channel_name: 'default_channel',
       user_id:      'U2147483697',
       user_name:    'Steve',
       command:      '/late',
@@ -26,7 +26,7 @@ describe ParamsProcessor do
   end
 
   it 'parses default channel' do
-    expect(subject.channel).to eq('#announcements')
+    expect(subject.channel).to eq('#default_channel')
   end
 
   it 'parses custom channel' do
@@ -40,7 +40,7 @@ describe ParamsProcessor do
     channel_data = data
     channel_data[:text] = nil
     parser = described_class.new(channel_data)
-    expect(parser.channel).to eq('#announcements')
+    expect(parser.channel).to eq('#default_channel')
     expect(parser.text).to eq('')
   end
 

@@ -2,6 +2,20 @@ require_relative 'spec_helper'
 
 describe 'API' do
 
+  let(:data) do
+    {
+      token:        'KjRUKVRBoQVerm6bJTymvOe0',
+      team_id:      'T0001',
+      team_domain:  'example',
+      channel_id:   'C2147483705',
+      channel_name: 'other_channel',
+      user_id:      'U2147483697',
+      user_name:    'Steve',
+      command:      '/timeoff',
+      text:         'Monday'
+    }
+  end
+
   let(:app) { Sinatra::Application }
 
   before do
@@ -10,12 +24,12 @@ describe 'API' do
   end
 
   it 'POST /late' do
-    post '/late', {text: '10AM #testing'}.to_json
+    post '/late', data
     expect(last_response).to be_ok
   end
 
   it 'POST /timeoff' do
-    post '/timeoff', {text: 'Monday, Wednesday'}.to_json
+    post '/timeoff', data
     expect(last_response).to be_ok
   end
 end
