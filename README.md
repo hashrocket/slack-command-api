@@ -60,7 +60,7 @@ Done.
 
 ## Testing
 1. Head to the spec folder. `cd spec`
-2. Run the tests with `rspec`
+2. Run the tests with `rspec --color --format documentation`
 
 ## Credits
 Maintainer: [Joshua Plicque](https://twitter.com/GoHard_EveryDay)
