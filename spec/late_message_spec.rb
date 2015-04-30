@@ -1,6 +1,6 @@
 require_relative 'spec_helper'
 
-describe TimeOffResponse do
+describe LateMessage do
 
   let(:data) do
     {
@@ -11,21 +11,21 @@ describe TimeOffResponse do
       channel_name: 'other_channel',
       user_id:      'U2147483697',
       user_name:    'Steve',
-      command:      '/timeoff',
-      text:         'Monday'
+      command:      '/late',
+      text:         '10AM'
     }
   end
 
-  it '#construct_message constructs a timeoff sentence for one day' do
-    expect(described_class.new(data).construct_message).to eq 'Hey guys, Steve is gonna be out Monday.'
+  it '#construct_message constructs a late sentence' do
+    expect(described_class.new.construct_message(data[:text], nil, data[:user_name])).to eq 'Hey team, Steve is gonna be late and will be in around 10AM.'
   end
 
   it '#icon_emoji returns a string' do
-    expect(described_class.new(data).icon_emoji).to be_a String
+    expect(described_class.new.icon_emoji).to be_a String
   end
 
   it '#bot_name returns a string' do
-    expect(described_class.new(data).bot_name).to be_a String
+    expect(described_class.new.bot_name).to be_a String
   end
 
 end

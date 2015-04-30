@@ -1,3 +1,5 @@
+require_relative 'response'
+
 class Slack
 
    attr_reader :request

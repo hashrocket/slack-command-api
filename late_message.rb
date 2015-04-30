@@ -1,8 +1,6 @@
-require_relative 'generic_response'
+class LateMessage
 
-class LateResponse < GenericResponse
-
-   def construct_message
+   def construct_message(text, timeoff_text, user_name)
       "Hey team, #{user_name} is gonna be late and will be in around #{text}."
    end
 

@@ -18,18 +18,18 @@ describe Slack do
     }
   end
 
-  let(:late_message) { LateResponse.new(data) }
+  let(:response) { Response.new(data, LateMessage.new) }
 
   it 'accepts data and posts it back to Slack' do
     stub_request(:post, 'http://www.example.com').to_return(body: 'foobar')
     expect(RestClient).to receive(:post)
-    described_class.new(late_message).post
+    described_class.new(response).post
   end
 
   it 'returns a json payload' do
-    response = described_class.new(late_message).payload
-    expect(response).to include "\"icon_emoji\""
-    expect(response).to include "\"username\""
+    payload = described_class.new(response).payload
+    expect(payload).to include "\"icon_emoji\""
+    expect(payload).to include "\"username\""
   end
 
 end

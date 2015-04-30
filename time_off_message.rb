@@ -1,8 +1,6 @@
-require_relative 'generic_response'
+class TimeOffMessage
 
-class TimeOffResponse < GenericResponse
-
-   def construct_message
+   def construct_message(text, timeoff_text, user_name)
       "Hey guys, #{user_name} is gonna be out #{timeoff_text}."
    end
 
