@@ -19,4 +19,11 @@ describe TimeOffResponse do
     expect(described_class.new(data).construct_message).to eq 'Hey guys, Steve is gonna be out Monday.'
   end
 
+  it '#icon_emoji returns a string' do
+    expect(described_class.new(data).icon_emoji).to be_a String
+  end
+
+  it '#bot_name returns a string' do
+    expect(described_class.new(data).bot_name).to be_a String
+  end
 end

@@ -20,4 +20,12 @@ describe LateResponse do
     expect(described_class.new(data).construct_message).to eq 'Hey team, Steve is gonna be late and will be in around 10AM.'
   end
 
+  it '#icon_emoji returns a string' do
+    expect(described_class.new(data).icon_emoji).to be_a String
+  end
+
+  it '#bot_name returns a string' do
+    expect(described_class.new(data).bot_name).to be_a String
+  end
+
 end
