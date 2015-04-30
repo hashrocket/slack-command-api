@@ -14,7 +14,7 @@ class Slack
          'text'       => message.construct_message,
          'channel'    => message.channel,
          'icon_emoji' => message.icon_emoji,
-         'bot_name'   => message.bot_name
+         'username'   => message.bot_name
       }.to_json
    end
 end

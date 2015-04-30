@@ -7,7 +7,7 @@ class TimeOffResponse < GenericResponse
    end
 
    def icon_emoji
-      ':whale'
+      ':whale:'
    end
 
    def bot_name

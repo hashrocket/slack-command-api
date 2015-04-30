@@ -6,7 +6,7 @@ class LateResponse < GenericResponse
    end
 
    def icon_emoji
-      ':turtle'
+      ':turtle:'
    end
 
    def bot_name
