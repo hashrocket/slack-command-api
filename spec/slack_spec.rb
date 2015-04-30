@@ -26,8 +26,8 @@ describe Slack do
     described_class.new(late_message).post
   end
 
-  it 'returns a json response' do
-    response = described_class.new(late_message).response
+  it 'returns a json payload' do
+    response = described_class.new(late_message).payload
     expect(response).to include "\"icon_emoji\""
     expect(response).to include "\"username\""
   end
