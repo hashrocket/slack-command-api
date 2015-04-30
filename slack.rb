@@ -1,9 +1,9 @@
 class Slack
 
-   attr_reader :response
+   attr_reader :request
 
-   def initialize(response)
-      @response = response
+   def initialize(request)
+      @request = request
    end
 
    def post
@@ -12,10 +12,10 @@ class Slack
 
    def payload
       {
-         'text'       => response.construct_message,
-         'channel'    => response.channel,
-         'icon_emoji' => response.icon_emoji,
-         'username'   => response.bot_name
+         'text'       => request.construct_message,
+         'channel'    => request.channel,
+         'icon_emoji' => request.icon_emoji,
+         'username'   => request.bot_name
       }.to_json
    end
 
