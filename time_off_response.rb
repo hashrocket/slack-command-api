@@ -1,4 +1,5 @@
 require_relative 'params_processor'
+require_relative 'generic_message'
 
 class TimeOffResponse
    extend Forwardable

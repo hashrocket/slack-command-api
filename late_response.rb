@@ -1,15 +1,5 @@
 require_relative 'params_processor'
-
-class GenericMessage
-   def call
-      raise MethodNotImplemented
-   end
-
-   def channel
-      raise MethodNotImplemented
-   end
-end
-
+require_relative 'generic_message'
 
 class LateResponse < GenericMessage
    extend Forwardable
