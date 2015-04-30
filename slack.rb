@@ -11,8 +11,10 @@ class Slack
 
    def response
       {
-         'text'    => message.call,
-         'channel' => message.channel
+         'text'       => message.construct_message,
+         'channel'    => message.channel,
+         'icon_emoji' => message.icon_emoji,
+         'bot_name'   => message.bot_name
       }.to_json
    end
 end

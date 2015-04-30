@@ -15,8 +15,8 @@ describe TimeOffResponse do
     }
   end
 
-  it '#call constructs a timeoff sentence for one day' do
-    expect(described_class.new(data).call).to eq 'Hey guys, Steve is gonna be out Monday.'
+  it '#construct_message constructs a timeoff sentence for one day' do
+    expect(described_class.new(data).construct_message).to eq 'Hey guys, Steve is gonna be out Monday.'
   end
 
 end

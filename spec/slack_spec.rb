@@ -28,6 +28,7 @@ describe Slack do
 
   it 'returns a json response' do
     response = described_class.new(late_message).response
-    expect(response).to include "{\"text\""
+    expect(response).to include "\"icon_emoji\""
+    expect(response).to include "\"bot_name\""
   end
 end

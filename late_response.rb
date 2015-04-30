@@ -1,22 +1,15 @@
-require_relative 'params_processor'
-require_relative 'generic_message'
+require_relative 'generic_response'
 
-class LateResponse < GenericMessage
-   extend Forwardable
-
-   delegate [:text, :user_name, :channel] => :processor
-
-   def initialize(params)
-      @params = params
-   end
-
-   def call
+class LateResponse < GenericResponse
+   def construct_message
       "Hey team, #{user_name} is gonna be late and will be in around #{text}."
    end
 
-   private
+   def icon_emoji
+      ':turtle'
+   end
 
-   def processor
-      @processor ||= ParamsProcessor.new(@params)
+   def bot_name
+      'Late-Bot'
    end
 end

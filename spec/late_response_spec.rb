@@ -16,8 +16,8 @@ describe LateResponse do
     }
   end
 
-  it '#call constructs a late sentence' do
-    expect(described_class.new(data).call).to eq 'Hey team, Steve is gonna be late and will be in around 10AM.'
+  it '#construct_message constructs a late sentence' do
+    expect(described_class.new(data).construct_message).to eq 'Hey team, Steve is gonna be late and will be in around 10AM.'
   end
 
 end
