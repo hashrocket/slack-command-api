@@ -4,7 +4,7 @@ class Response
    attr_reader :message
    extend Forwardable
 
-   delegate [:timeoff_text, :user_name, :channel, :text] => :processor
+   delegate [:user_name, :channel, :text] => :processor
    delegate [:icon_emoji, :bot_name] => :message
 
    def initialize(params, message)
@@ -13,7 +13,7 @@ class Response
    end
 
    def construct_message
-      message.construct_message(text, timeoff_text, user_name)
+      message.construct_message(text, user_name)
    end
 
    private

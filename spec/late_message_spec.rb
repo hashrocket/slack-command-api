@@ -17,7 +17,7 @@ describe LateMessage do
   end
 
   it '#construct_message constructs a late sentence' do
-    expect(described_class.new.construct_message(data[:text], nil, data[:user_name])).to eq 'Hey team, Steve is gonna be late and will be in around 10AM.'
+    expect(described_class.new.construct_message(data[:text], data[:user_name])).to eq 'Hey team, Steve is gonna be late and will be in around 10AM.'
   end
 
   it '#icon_emoji returns a string' do

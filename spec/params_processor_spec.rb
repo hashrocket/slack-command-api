@@ -46,19 +46,19 @@ describe ParamsProcessor do
   it 'parses timeoff text for one day' do
     data[:text] = "Monday"
     parser = described_class.new(data)
-    expect(parser.timeoff_text).to eq('Monday')
+    expect(parser.text).to eq('Monday')
   end
 
   it 'parses timeoff text for two days with a space' do
     data[:text] = "Monday, Tuesday"
     parser = described_class.new(data)
-    expect(parser.timeoff_text).to eq('Monday through Tuesday')
+    expect(parser.text).to eq('Monday through Tuesday')
   end
 
   it 'parses timeoff text for two days without a space' do
     data[:text] = 'Monday,Wednesday'
     parser = described_class.new(data)
-    expect(parser.timeoff_text).to eq 'Monday through Wednesday'
+    expect(parser.text).to eq 'Monday through Wednesday'
   end
 
 end

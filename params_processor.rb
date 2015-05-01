@@ -7,11 +7,7 @@ class ParamsProcessor
    end
 
    def text
-      text_values[0]
-   end
-
-   def timeoff_text
-      text.gsub(' ', '').gsub(',', ' through ')
+      text_values[0].include?(',') ? timeoff_text : text_values[0]
    end
 
    def channel
@@ -26,6 +22,10 @@ class ParamsProcessor
 
    def text_values
       params[:text] ? params[:text].split(/(?=#)/).map(&:strip) : [""]
+   end
+
+   def timeoff_text
+      text_values[0].gsub(' ', '').gsub(',', ' through ')
    end
 
 end
