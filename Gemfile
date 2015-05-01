@@ -13,4 +13,5 @@ group :test do
   gem 'rspec'      # Testing Framework
   gem 'rack-test'  # Testing library for Rack
   gem 'webmock'    # Fake HTTP requests
+  gem 'simplecov'  # Code Coverage
 end

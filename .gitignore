@@ -3,3 +3,6 @@
 
 # Ignore logs
 passenger.3000*
+
+# Ignore code coverage
+coverage

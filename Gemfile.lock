@@ -6,6 +6,7 @@ GEM
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
     diff-lcs (1.2.5)
+    docile (1.1.5)
     domain_name (0.5.24)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.0.1)
@@ -47,6 +48,11 @@ GEM
       rspec-support (~> 3.2.0)
     rspec-support (3.2.2)
     safe_yaml (1.0.4)
+    simplecov (0.10.0)
+      docile (~> 1.1.0)
+      json (~> 1.8)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.0)
     sinatra (1.4.6)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -72,5 +78,6 @@ DEPENDENCIES
   rdiscount
   rest-client
   rspec
+  simplecov
   sinatra
   webmock
