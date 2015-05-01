@@ -1,7 +1,7 @@
 class TimeOffMessage
 
-   def construct_message(text, timeoff_text, user_name)
-      "Hey guys, #{user_name} is gonna be out #{timeoff_text}."
+   def construct_message(text, user_name)
+      "Hey guys, #{user_name} is gonna be out #{text}."
    end
 
    def icon_emoji

@@ -17,7 +17,7 @@ describe TimeOffMessage do
   end
 
   it '#construct_message constructs a timeoff sentence for one day' do
-    expect(described_class.new.construct_message(data[:text], 'Monday', data[:user_name])).to eq 'Hey guys, Steve is gonna be out Monday.'
+    expect(described_class.new.construct_message(data[:text], data[:user_name])).to eq 'Hey guys, Steve is gonna be out Monday.'
   end
 
   it '#icon_emoji returns a string' do

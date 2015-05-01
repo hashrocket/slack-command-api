@@ -2,10 +2,10 @@ require_relative 'response'
 
 class Slack
 
-   attr_reader :request
+   attr_reader :response
 
-   def initialize(request)
-      @request = request
+   def initialize(response)
+      @response = response
    end
 
    def post
@@ -14,10 +14,10 @@ class Slack
 
    def payload
       {
-         'text'       => request.construct_message,
-         'channel'    => request.channel,
-         'icon_emoji' => request.icon_emoji,
-         'username'   => request.bot_name
+         'text'       => response.construct_message,
+         'channel'    => response.channel,
+         'icon_emoji' => response.icon_emoji,
+         'username'   => response.bot_name
       }.to_json
    end
 
