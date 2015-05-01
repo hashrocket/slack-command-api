@@ -32,33 +32,28 @@ describe ParamsProcessor do
 
   it 'parses custom channel' do
     data[:text] = '10AM #other_channel'
-    parser = described_class.new(data)
-    expect(parser.channel).to eq('#other_channel')
+    expect(subject.channel).to eq('#other_channel')
   end
 
   it 'parses no text' do
     data[:text] = nil
-    parser = described_class.new(data)
-    expect(parser.channel).to eq('#default_channel')
-    expect(parser.text).to eq('')
+    expect(subject.channel).to eq('#default_channel')
+    expect(subject.text).to eq('')
   end
 
   it 'parses timeoff text for one day' do
     data[:text] = "Monday"
-    parser = described_class.new(data)
-    expect(parser.text).to eq('Monday')
+    expect(subject.text).to eq('Monday')
   end
 
   it 'parses timeoff text for two days with a space' do
     data[:text] = "Monday, Tuesday"
-    parser = described_class.new(data)
-    expect(parser.text).to eq('Monday through Tuesday')
+    expect(subject.text).to eq('Monday through Tuesday')
   end
 
   it 'parses timeoff text for two days without a space' do
     data[:text] = 'Monday,Wednesday'
-    parser = described_class.new(data)
-    expect(parser.text).to eq 'Monday through Wednesday'
+    expect(subject.text).to eq 'Monday through Wednesday'
   end
 
 end
