@@ -1,7 +1,7 @@
 require 'bundler'
-require_relative 'slack'
-require_relative 'late_message'
-require_relative 'time_off_message'
+require_relative './models/slack'
+require_relative './models/late_message'
+require_relative './models/time_off_message'
 Bundler.require
 Dotenv.load
 
