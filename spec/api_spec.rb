@@ -33,4 +33,9 @@ describe 'API' do
     expect(last_response).to be_ok
   end
 
+  it 'POST /hat_tip' do
+    post '/hat_tip', data
+    expect(last_response).to be_ok
+  end
+
 end
