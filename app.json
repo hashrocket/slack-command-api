@@ -5,7 +5,7 @@
   "keywords": ["ruby", "rails", "sinatra", "slack", "api"],
   "env": {
     "SLACK_URL": {
-      "description": "The Slack webhook environment variable for your app's incoming webhook."
+      "description": "The Slack webhook environment variable for your app's incoming webhook.\nhttps://my.slack.com/services/new/incoming-webhook"
     }
   }
 }
