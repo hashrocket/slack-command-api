@@ -1,5 +1,5 @@
 {
-  "name": "Node.js Sample",
+  "name": "Slack Command API",
   "description": "A Sinatra API for processing custom Slack commands",
   "repository": "https://github.com/hashrocket/slack-command-api",
   "keywords": ["ruby", "rails", "sinatra", "slack", "api"]
