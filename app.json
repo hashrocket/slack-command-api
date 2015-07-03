@@ -1,0 +1,11 @@
+{
+  "name": "Slack Command API",
+  "description": "A Sinatra API for processing custom Slack commands",
+  "repository": "https://github.com/hashrocket/slack-command-api",
+  "keywords": ["ruby", "rails", "sinatra", "slack", "api"],
+  "env": {
+    "SLACK_URL": {
+      "description": "The Slack webhook environment variable for your app's incoming webhook.\nhttps://my.slack.com/services/new/incoming-webhook"
+    }
+  }
+}

@@ -1,4 +1,4 @@
-# Slack Command API
+# Slack Command API [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/hashrocket/slack-command-api)
 
 This Sinatra API converts custom Slack commands into Bot messages.
 The API will post to your current channel by default, but you can specify a channel: `/late 10AM #another_channel`
