@@ -1,7 +1,6 @@
 require_relative 'spec_helper'
 
 describe 'API' do
-
   let(:data) do
     {
       token:        'KjRUKVRBoQVerm6bJTymvOe0',
@@ -37,5 +36,4 @@ describe 'API' do
     post '/hat_tip', data
     expect(last_response).to be_ok
   end
-
 end

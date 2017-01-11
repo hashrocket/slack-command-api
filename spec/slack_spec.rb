@@ -1,7 +1,6 @@
 require_relative 'spec_helper'
 
 describe Slack do
-
   let(:app) { Sinatra::Application }
 
   let(:data) do
@@ -31,5 +30,4 @@ describe Slack do
     expect(payload).to include "\"icon_emoji\""
     expect(payload).to include "\"username\""
   end
-
 end

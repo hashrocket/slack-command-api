@@ -7,21 +7,20 @@ Bundler.require
 Dotenv.load
 
 post '/late' do
-   response = Response.new(params, LateMessage.new)
-   Slack.new(response).post
+  response = Response.new(params, LateMessage.new)
+  Slack.new(response).post
 end
 
 post '/timeoff' do
-   response = Response.new(params, TimeOffMessage.new)
-   Slack.new(response).post
+  response = Response.new(params, TimeOffMessage.new)
+  Slack.new(response).post
 end
 
 post '/hat_tip' do
-   response = Response.new(params, HatTipMessage.new)
-   Slack.new(response).post
+  response = Response.new(params, HatTipMessage.new)
+  Slack.new(response).post
 end
 
 get '/' do
-   markdown :index
+  markdown :index
 end
-

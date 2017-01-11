@@ -8,6 +8,6 @@ class HatTipMessage
   end
 
   def icon_emoji
-   ':tophat:'
+    ':tophat:'
   end
 end
