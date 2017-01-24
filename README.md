@@ -9,7 +9,6 @@ A `/late 10AM` command converts to a text response **Hey team, I'm gonna be in a
 ## Dependencies
 
 * RVM
-* Ruby 2.2.2
 * Sinatra
 * Testing: RSpec
 

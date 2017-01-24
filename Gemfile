@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-ruby '2.2.2'
+ruby '2.3.3'
+#ruby-gemset=slack_command_api
 
 gem 'rdiscount'    # HTML Preprocessor
 gem 'json'         # JSON
