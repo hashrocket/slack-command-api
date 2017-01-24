@@ -1,7 +1,6 @@
 require_relative 'spec_helper'
 
 describe ParamsProcessor do
-
   let(:data) do
     {
       token:        'KjRUKVRBoQVerm6bJTymvOe0',
@@ -55,5 +54,4 @@ describe ParamsProcessor do
     data[:text] = 'Monday,Wednesday'
     expect(subject.text).to eq 'Monday through Wednesday'
   end
-
 end

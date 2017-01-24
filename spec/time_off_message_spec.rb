@@ -1,7 +1,6 @@
 require_relative 'spec_helper'
 
 describe TimeOffMessage do
-
   let(:data) do
     {
       token:        'KjRUKVRBoQVerm6bJTymvOe0',
@@ -27,5 +26,4 @@ describe TimeOffMessage do
   it '#bot_name returns a string' do
     expect(described_class.new.bot_name).to be_a String
   end
-
 end
